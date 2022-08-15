@@ -1,0 +1,1 @@
+export const dayNames: Array<string> = ['M', 'Tu', 'W', 'Th', 'F', 'Sa', 'Su'];

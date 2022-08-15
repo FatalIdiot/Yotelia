@@ -1,0 +1,35 @@
+@import "styles/custom.scss";
+$colorSphereSize: 20px;
+
+.task-list-page {
+    .task-list-header {
+        position: sticky;
+        top: 0;
+        background-color: $secondary;
+        color: white;
+
+        .search-field {
+            label {
+                color: white;
+            }
+            input {
+                color: white;
+            }
+            fieldset {
+                border-color: white;
+            }
+        }
+    }
+
+    .task-list-item {
+        .item-time {
+            font-size: small;
+        }
+
+        .color-sphere {
+            min-width: $colorSphereSize;
+            min-height: $colorSphereSize;
+            border-radius: 50%;
+        }
+    }
+}

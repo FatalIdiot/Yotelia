@@ -1,0 +1,21 @@
+@import "styles/custom.scss";
+
+.task-creation-page {
+    .type-selector-container {
+        .type-item {
+            border-bottom: solid 2px rgba(0,0,0,0);
+            cursor: pointer;
+
+            &.active {
+                border: solid 2px $secondary;
+            }
+            &:hover {
+                border-bottom: solid 2px $secondary;
+            }
+        }
+    }
+
+    .day-label {
+        width: 42px;
+    }
+}

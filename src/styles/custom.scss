@@ -1,0 +1,25 @@
+$primary: #004C9C !default;
+$secondary: #0091b8 !default;
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary
+);
+
+@each $color-name, $color-code in $colors {
+    .text-#{$color-name} {
+        color: $color-code !important;
+    }
+}
+
+@each $color-name, $color-code in $colors {
+    .bg-#{$color-name} {
+        background-color: $color-code !important;
+    }
+}
+
+@each $color-name, $color-code in $colors {
+    .border-#{$color-name} {
+        border-color: $color-code!important;
+    }
+}

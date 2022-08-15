@@ -1,0 +1,21 @@
+.notifications-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    opacity: .85;
+    z-index: 10;
+    color: white;
+
+    .notification {
+        min-width: 150px;
+        max-width: 300px;
+        border-radius: 10px;
+        transition: '1s';
+        margin-right: 30px;
+        line-height: 1rem;
+
+        &.closed {
+            margin-right: 0;
+        }
+    }
+}

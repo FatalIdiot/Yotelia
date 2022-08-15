@@ -1,0 +1,32 @@
+@import './custom.scss';
+@import './bootstrap/bootstrap.scss';
+
+.react-colorful {
+    width: auto !important;
+}
+
+.planner-content {
+    height: 100vh;
+}
+
+$cursor-values: (
+    "help": help,
+    "pointer": pointer,
+    "not-allowed": not-allowed,
+    "grab": grab
+);
+@each $name, $value in $cursor-values {
+    .c-#{$name} {
+        cursor: $value;
+    }
+}
+
+$text-align-values: (
+    "right": right,
+    "left": left
+);
+@each $name, $value in $text-align-values {
+    .text-#{$name} {
+        text-align: $value !important;
+    }
+}

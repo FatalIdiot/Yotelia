@@ -1,0 +1,30 @@
+$tasksListWidth: 250px;
+$colorSphereSize: 20px;
+
+.tasks-list {
+    max-height: 75%;
+    overflow: auto;
+    width: $tasksListWidth;
+
+    .task-item {
+        .task-item-fields {
+            overflow: hidden;
+
+            .item-title {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .item-time {
+                font-size: small;
+            }
+        }
+
+        .color-sphere {
+            min-width: $colorSphereSize;
+            min-height: $colorSphereSize;
+            border-radius: 50%;
+        }
+    }
+}
