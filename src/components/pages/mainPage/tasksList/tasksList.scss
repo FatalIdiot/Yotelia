@@ -7,6 +7,11 @@ $colorSphereSize: 20px;
     width: $tasksListWidth;
 
     .task-item {
+        &.cancelled {
+            text-decoration: line-through;
+            opacity: .5;
+        }
+
         .task-item-fields {
             overflow: hidden;
 

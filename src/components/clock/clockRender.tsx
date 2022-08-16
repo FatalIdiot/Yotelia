@@ -8,7 +8,8 @@ export type ClockRenderData = {
     radius: number,
     clockColor: string,
     clockColorShade: string,
-    storeDayTasks: DayTasksData
+    storeDayTasks: DayTasksData,
+    cancelledTasks: Array<string>
 }
 
 function renderClockCanvas(renderData: ClockRenderData) {
@@ -34,9 +35,12 @@ const drawClockBase = (renderData: ClockRenderData) => {
 }
 
 const drawClockTasks = (renderData: ClockRenderData) => {
-    const { ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks } = renderData;
+    const { ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks, cancelledTasks } = renderData;
 
     storeDayTasks.dayTasks.forEach((taskData: Task) => {
+        if(cancelledTasks.indexOf(taskData.id) !== -1)
+            return;
+
         const task = {
             startHour: Number( moment(taskData.startTime).format('HH') ),
             endHour: Number( moment(taskData.endTime).format('HH') ),

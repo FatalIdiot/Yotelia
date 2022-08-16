@@ -9,8 +9,10 @@ const basePadding = 50;
 
 const Clock: FunctionComponent = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const storeDayTasks = useSelector((state: any) => state.app.dayTasks);
     const dispatch = useDispatch();
+
+    const storeDayTasks = useSelector((state: any) => state.app.dayTasks);
+    const cancelledTasks = useSelector((state: any) => state.app.cancelledTasks);
 
     const [sizeMult, setSizeMult] = useState<number>(1);
     const [clockSize, setClockSize] = useState<number>(baseSize * sizeMult);
@@ -56,7 +58,7 @@ const Clock: FunctionComponent = () => {
         return () => {
             clearInterval(clockInterval);
         }
-    }, [storeDayTasks]);
+    }, [storeDayTasks, cancelledTasks]);
 
     const handleCanvas = () => {
         const ctx: CanvasRenderingContext2D | null | undefined = canvasRef.current?.getContext("2d");
@@ -65,7 +67,7 @@ const Clock: FunctionComponent = () => {
         ctx.canvas.width = totalSize;
         ctx.canvas.height = totalSize;
 
-        renderClockCanvas({ ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks });
+        renderClockCanvas({ ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks, cancelledTasks });
     }
 
     return (

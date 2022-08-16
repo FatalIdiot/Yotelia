@@ -1,7 +1,8 @@
-import moment from 'moment';
 import { FunctionComponent } from 'react';
 import { Task } from 'types';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { checkTask } from 'redux/reducers/cancelledTasks/actionTypes';
+import moment from 'moment';
 
 import './tasksList.scss';
 
@@ -11,6 +12,10 @@ type TasksListProps = {
 }
 
 const TasksList: FunctionComponent<TasksListProps> = ({ tasks, curTaskId }) => {
+    const dispatch = useDispatch();
+
+    const cancelledTasks = useSelector((state: any) => state.app.cancelledTasks);
+
     const renderColorSphere = (color: string) => {
         return (
             <div className="color-sphere d-inline-block me-3" style={{ backgroundColor: color }} />
@@ -21,7 +26,9 @@ const TasksList: FunctionComponent<TasksListProps> = ({ tasks, curTaskId }) => {
         <div className="tasks-list p-2">
             { 
                 tasks.map((task: Task) => (
-                    <div className="task-item d-flex align-items-center my-2">
+                    <div className={`task-item d-flex align-items-center c-pointer my-2 ${cancelledTasks.indexOf(task.id) !== -1 ? 'cancelled' : ''}`} 
+                        onClick={() => dispatch(checkTask(task.id))}
+                    >
                         { renderColorSphere(task.color) }
                         <div className="task-item-fields">
                             <div className={`item-title ${task.description ? 'c-help' : ''} ${curTaskId === task.id ? 'fw-bold' : ''}`} 
