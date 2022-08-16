@@ -24,15 +24,18 @@ type TaskCreationPageState = {
     taskDays: Array<boolean>
 };
 
-const initState: TaskCreationPageState = {
-    title: '',
-    desc: '',
-    startTime: null,
-    endTime: null,
-    taskDate: moment().format('MM/DD/YYYY'),
-    rgbColor: {r: 0, g: 0, b: 0},
-    taskType: TaskType.Once,
-    taskDays: Array(7).fill(false)
+const getInitState = () : TaskCreationPageState => {
+    // Have it as a function to have proper 'taskDate' on state clear after a day of app working has passed
+    return {
+        title: '',
+        desc: '',
+        startTime: null,
+        endTime: null,
+        taskDate: moment().format('MM/DD/YYYY'),
+        rgbColor: {r: 0, g: 0, b: 0},
+        taskType: TaskType.Once,
+        taskDays: Array(7).fill(false)
+    };
 }
 
 const TaskCreationPage: FunctionComponent = () => {
@@ -43,7 +46,7 @@ const TaskCreationPage: FunctionComponent = () => {
     const tasksPool = useSelector((state: any) => state.app.tasks);
     const [errorList, setErrors] = useState<Array<string>>([]);
 
-    const [pageState, setState] = useState<TaskCreationPageState>(initState);
+    const [pageState, setState] = useState<TaskCreationPageState>(getInitState());
     const { title, desc, startTime, endTime, taskDate, rgbColor, taskType, taskDays } = pageState;
 
     useEffect(() => {
@@ -140,7 +143,7 @@ const TaskCreationPage: FunctionComponent = () => {
             navigate('/tasks');
         } else { // Create new Task
             dispatch(addTask( newTask ));
-            setState({...initState});
+            setState({...getInitState()});
             dispatch(addNotificationSuccess({ label: `Task Created`, text: title }));
         }
     }
