@@ -13,6 +13,8 @@ import Notifications from 'components/notifications/notifications';
 import 'styles/main.scss';
 
 function App() {
+  const baseUrl = process.env.REACT_APP_URL_PREFIX || '/';
+
   return (
     <Provider store={store}>
       <Notifications />
@@ -21,10 +23,10 @@ function App() {
         <Container className="planner-content">
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<MainPage />} />
-              <Route path="new" element={<TaskCreation />} />
-              <Route path="edit/:id" element={<TaskCreation />} />
-              <Route path="tasks" element={<TasksList />} />
+              <Route path={`${baseUrl}`} element={<MainPage />} />
+              <Route path={`${baseUrl}new`} element={<TaskCreation />} />
+              <Route path={`${baseUrl}edit/:id`} element={<TaskCreation />} />
+              <Route path={`${baseUrl}tasks`} element={<TasksList />} />
             </Routes>
           </BrowserRouter>
         </Container>

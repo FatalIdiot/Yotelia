@@ -36,7 +36,7 @@ const TasksListPage: FunctionComponent = () => {
     return (
         <Box className="task-list-page">
             <div className="task-list-header d-flex justify-content-between align-items-center p-2">
-                <AiFillLeftCircle className="c-pointer" size={25} onClick={() => navigate('/')} />
+                <AiFillLeftCircle className="c-pointer" size={25} onClick={() => navigate(process.env.REACT_APP_URL_PREFIX || '/')} />
 
                 <div>
                     <TextField className="search-field"

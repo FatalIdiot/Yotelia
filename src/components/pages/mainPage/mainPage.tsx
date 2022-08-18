@@ -41,8 +41,10 @@ const MainPage: FunctionComponent = () => {
                 <Clock />
 
                 <div className="buttons-container text-center mt-3">
-                    <Button variant="contained" onClick={() => navigate('/new')} className="me-3">Add Task</Button>
-                    <Button variant="contained" onClick={() => navigate('/tasks')}>Manage Tasks</Button>
+                    <Button variant="contained" onClick={() => navigate(`${process.env.REACT_APP_URL_PREFIX || '/'}new`)} className="me-3">
+                        Add Task
+                    </Button>
+                    <Button variant="contained" onClick={() => navigate(`${process.env.REACT_APP_URL_PREFIX || '/'}tasks`)}>Manage Tasks</Button>
                 </div>
             </div>
 

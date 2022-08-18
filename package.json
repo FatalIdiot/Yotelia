@@ -1,6 +1,7 @@
 {
-  "name": "planner",
+  "name": "yotelia",
   "version": "0.1.0",
+  "homepage": "http://localhost:3000/Yotelia/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -33,6 +34,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -58,6 +62,7 @@
   },
   "devDependencies": {
     "@types/react-router-redux": "^5.0.21",
-    "@types/redux-logger": "^3.0.9"
+    "@types/redux-logger": "^3.0.9",
+    "gh-pages": "^4.0.0"
   }
 }

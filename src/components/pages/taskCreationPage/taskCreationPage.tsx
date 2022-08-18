@@ -140,7 +140,7 @@ const TaskCreationPage: FunctionComponent = () => {
         if(params.id) { // Save edited Task
             dispatch(changeTask( params.id, newTask ));
             dispatch(addNotificationSuccess({ label: `Task Changed`, text: title }));
-            navigate('/tasks');
+            navigate(`${process.env.REACT_APP_URL_PREFIX || '/'}tasks`);
         } else { // Create new Task
             dispatch(addTask( newTask ));
             setState({...getInitState()});
@@ -231,7 +231,7 @@ const TaskCreationPage: FunctionComponent = () => {
                 }
 
                 <div className="buttons-container text-right mt-3">
-                    <Button variant="contained" className="me-3" onClick={() => navigate('/')}>Back</Button>
+                    <Button variant="contained" className="me-3" onClick={() => navigate(process.env.REACT_APP_URL_PREFIX || '/')}>Back</Button>
                     <Button variant="contained" onClick={saveForm}>Save</Button>
                 </div>
             </div>
