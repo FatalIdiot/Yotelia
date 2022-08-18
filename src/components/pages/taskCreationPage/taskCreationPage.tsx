@@ -231,7 +231,7 @@ const TaskCreationPage: FunctionComponent = () => {
                 }
 
                 <div className="buttons-container text-right mt-3">
-                    <Button variant="contained" className="me-3" onClick={() => navigate('/')}>Cancel</Button>
+                    <Button variant="contained" className="me-3" onClick={() => navigate('/')}>Back</Button>
                     <Button variant="contained" onClick={saveForm}>Save</Button>
                 </div>
             </div>

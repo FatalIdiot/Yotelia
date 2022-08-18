@@ -19,7 +19,7 @@ function renderClockCanvas(renderData: ClockRenderData) {
 }
 
 const drawClockBase = (renderData: ClockRenderData) => {
-    const { ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks } = renderData;
+    const { ctx, totalSize, center, radius, clockColor } = renderData;
 
     ctx.clearRect(0, 0, totalSize, totalSize);
 
@@ -35,7 +35,7 @@ const drawClockBase = (renderData: ClockRenderData) => {
 }
 
 const drawClockTasks = (renderData: ClockRenderData) => {
-    const { ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks, cancelledTasks } = renderData;
+    const { ctx, totalSize, center, radius, storeDayTasks, cancelledTasks } = renderData;
 
     storeDayTasks.dayTasks.forEach((taskData: Task) => {
         if(cancelledTasks.indexOf(taskData.id) !== -1)
@@ -97,7 +97,7 @@ const drawClockTasks = (renderData: ClockRenderData) => {
 }
 
 const drawClockPost = (renderData: ClockRenderData) => {
-    const { ctx, totalSize, center, radius, clockColor, clockColorShade, storeDayTasks } = renderData;
+    const { ctx, totalSize, center, radius, clockColorShade } = renderData;
     
     ctx.beginPath();
     ctx.fillStyle = clockColorShade;

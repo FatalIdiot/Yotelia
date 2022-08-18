@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Box, Button } from '@mui/material';
 import { Task, TaskText } from 'types';
 import { genTaskText } from 'helpers/textGenerator';
+import { sortTasksByTime } from 'helpers/helperData';
 
 import Clock from 'components/clock/clock';
 import TasksList from './tasksList/tasksList';
@@ -45,7 +46,7 @@ const MainPage: FunctionComponent = () => {
                 </div>
             </div>
 
-            <TasksList tasks={dayTasks} curTaskId={curTask?.id || ''} />
+            <TasksList tasks={dayTasks.sort(sortTasksByTime)} curTaskId={curTask?.id || ''} />
         </Box>
     );
 }

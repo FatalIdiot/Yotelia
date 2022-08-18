@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Task, TasksPool, TaskType } from 'types';
 import { clearAll } from 'redux/reducers/tasks/actionTypes';
 import { AiFillLeftCircle, AiOutlineClear } from 'react-icons/ai';
-import moment from 'moment';
+import { sortTasksByTime, sortTasksByType } from 'helpers/helperData';
 
 import TasksListItem from './tasksListItem';
 
@@ -24,18 +24,8 @@ const TasksListPage: FunctionComponent = () => {
     const [searchTitle, setSearch] = useState<string>('');
     const dayTasks: TasksPool = useSelector((state: any) => (state.app.tasks));
 
-    const sortByTime = (task1: Task, task2: Task) => {
-        if(moment(task1.startTime).isBefore( moment(task2.startTime) ))
-            return -1;
-        else return 1;
-    }
-
-    const sortByType = (task1: Task, task2: Task) => {
-        return task1.type > task2.type ? -1 : 1;
-    }
-
     const pullTasks = () => {
-        return [...dayTasks.daily, ...dayTasks.single].sort(sortByTime).sort(sortByType);
+        return [...dayTasks.daily, ...dayTasks.single].sort(sortTasksByTime).sort(sortTasksByType);
     }
 
     const [tasks, setTasks] = useState(pullTasks());
