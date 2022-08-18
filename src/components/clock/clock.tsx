@@ -73,7 +73,8 @@ const Clock: FunctionComponent = () => {
     return (
         <div>
             <canvas ref={canvasRef} width={totalSize} height={totalSize} 
-                onClick={() => setSizeMult( sizeMult + .5 )} />
+                // onClick={() => setSizeMult( sizeMult + .5 )} 
+            />
         </div>
     );
 }
