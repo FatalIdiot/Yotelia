@@ -1,6 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, TextField } from '@mui/material';
+import { Container, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Task, TasksPool, TaskType } from 'types';
 import { clearAll } from 'redux/reducers/tasks/actionTypes';
@@ -34,7 +34,7 @@ const TasksListPage: FunctionComponent = () => {
     }, [dayTasks]);
 
     return (
-        <Box className="task-list-page">
+        <Container className="task-list-page">
             <div className="task-list-header d-flex justify-content-between align-items-center p-2">
                 <AiFillLeftCircle className="c-pointer" size={25} onClick={() => navigate(process.env.REACT_APP_URL_PREFIX || '/')} />
 
@@ -60,7 +60,7 @@ const TasksListPage: FunctionComponent = () => {
             :
                 <h4 className="text-center mt-3">There Are No Tasks</h4>
             }
-        </Box>
+        </Container>
     );
 }
 

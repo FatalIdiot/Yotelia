@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Box, Button, TextField, InputLabel, Grid, FormGroup, Checkbox } from '@mui/material';
+import { Container, Button, TextField, InputLabel, Grid, FormGroup, Checkbox } from '@mui/material';
 import { RgbColorPicker } from "react-colorful";
 import { Task, TaskType, rgbColor } from 'types';
 import { TimePicker, DatePicker } from '@mui/x-date-pickers';
@@ -149,7 +149,7 @@ const TaskCreationPage: FunctionComponent = () => {
     }
 
     return (
-        <Box className="task-creation-page d-flex justify-content-center align-items-center h-100">
+        <Container className="task-creation-page d-flex justify-content-center align-items-center h-100">
             <div className="p-2 border rounded">
                 <h3 className="text-center mb-3">New Task</h3>
 
@@ -235,7 +235,7 @@ const TaskCreationPage: FunctionComponent = () => {
                     <Button variant="contained" onClick={saveForm}>Save</Button>
                 </div>
             </div>
-        </Box>
+        </Container>
     );
 }
 

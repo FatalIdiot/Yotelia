@@ -27,7 +27,7 @@ const TasksList: FunctionComponent<TasksListProps> = ({ tasks, curTaskId }) => {
             { 
                 tasks.map((task: Task) => (
                     <div className={`task-item d-flex align-items-center c-pointer my-2 ${cancelledTasks.indexOf(task.id) !== -1 ? 'cancelled' : ''}`} 
-                        onClick={() => dispatch(checkTask(task.id))}
+                        onClick={() => dispatch(checkTask(task.id))} key={task.id}
                     >
                         { renderColorSphere(task.color) }
                         <div className="task-item-fields">

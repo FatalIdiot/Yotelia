@@ -1,7 +1,7 @@
 import { FunctionComponent, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Box, Button } from '@mui/material';
+import { Container, Button } from '@mui/material';
 import { Task, TaskText } from 'types';
 import { genTaskText } from 'helpers/textGenerator';
 import { sortTasksByTime } from 'helpers/helperData';
@@ -27,7 +27,7 @@ const MainPage: FunctionComponent = () => {
     }, [curTask]);
 
     return (
-        <Box className="main-page d-flex justify-content-center align-items-center h-100">
+        <Container className="main-page d-flex justify-content-center align-items-center h-100">
             <h2 className="app-title position-absolute mt-3 ms-3" style={{ top: 0, left: 0, opacity: .2 }}>
                 Yotelia Planner
             </h2>
@@ -49,7 +49,7 @@ const MainPage: FunctionComponent = () => {
             </div>
 
             <TasksList tasks={dayTasks.sort(sortTasksByTime)} curTaskId={curTask?.id || ''} />
-        </Box>
+        </Container>
     );
 }
 
