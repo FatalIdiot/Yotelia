@@ -61,7 +61,7 @@ const TasksListItem: FunctionComponent<TasksListItemProps> = ({ task, background
 
                 <div className="buttons-row">
                     <AiFillEdit size={iconSize} className="c-pointer" 
-                        onClick={() => navigate(`process.env.REACT_APP_URL_PREFIX || '/'edit/${task.id}`)} />
+                        onClick={() => navigate(`${process.env.REACT_APP_URL_PREFIX || '/'}edit/${task.id}`)} />
                     <AiFillDelete size={iconSize} className="c-pointer mx-2" onClick={deleteTask} />
 
                     { task.description &&
