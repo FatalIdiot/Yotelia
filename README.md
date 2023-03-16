@@ -1,4 +1,4 @@
-Published app on GitHub Pages: https://fatalidiot.github.io/Yotelia/
+**Try it [HERE](http://16.170.232.60/Yotelia/)**
 
 A little planner app to visualize day tasks.
 Plan out the day, create one-time or recurring tasks and see the visual representation of the things that need to be done today.
