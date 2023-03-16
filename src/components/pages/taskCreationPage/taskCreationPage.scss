@@ -1,6 +1,14 @@
 @import "styles/custom.scss";
 
+@media only screen and (max-width: $mobileBreakpoint) {
+    .task-creation-page {
+        align-items: initial !important;
+    }
+}
+
 .task-creation-page {
+    align-items: center;
+
     .type-selector-container {
         .type-item {
             border-bottom: solid 2px rgba(0,0,0,0);

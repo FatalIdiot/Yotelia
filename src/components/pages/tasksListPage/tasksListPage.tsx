@@ -34,7 +34,7 @@ const TasksListPage: FunctionComponent = () => {
     }, [dayTasks]);
 
     return (
-        <Container className="task-list-page">
+        <Container maxWidth='sm' className="task-list-page p-0">
             <div className="task-list-header d-flex justify-content-between align-items-center p-2">
                 <AiFillLeftCircle className="c-pointer" size={25} onClick={() => navigate(process.env.REACT_APP_URL_PREFIX || '/')} />
 

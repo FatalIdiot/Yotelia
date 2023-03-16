@@ -149,10 +149,8 @@ const TaskCreationPage: FunctionComponent = () => {
     }
 
     return (
-        <Container className="task-creation-page d-flex justify-content-center align-items-center h-100">
+        <Container className="task-creation-page d-flex justify-content-center h-100 p-0">
             <div className="p-2 border rounded">
-                <h3 className="text-center mb-3">New Task</h3>
-
                 <TextField id="title" label="Title" variant="outlined" className="mb-3" 
                     value={title} onChange={(e: any) => changeState('title', e.target.value)} />
                 <TextField id="description" label="Description" variant="outlined" className="mb-3" fullWidth 

@@ -20,7 +20,7 @@ function App() {
       <Notifications />
 
       <LocalizationProvider dateAdapter={AdapterMoment}>
-        <Container className="planner-content">
+        <Container className="planner-content p-0">
           <BrowserRouter>
             <Routes>
               <Route path={`${baseUrl}`} element={<MainPage />} />
