@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Yotelia/static/css/main.7b547e88.css",
+    "main.js": "/Yotelia/static/js/main.17fdeed1.js",
+    "static/js/787.ab328dec.chunk.js": "/Yotelia/static/js/787.ab328dec.chunk.js",
+    "index.html": "/Yotelia/index.html",
+    "main.7b547e88.css.map": "/Yotelia/static/css/main.7b547e88.css.map",
+    "main.17fdeed1.js.map": "/Yotelia/static/js/main.17fdeed1.js.map",
+    "787.ab328dec.chunk.js.map": "/Yotelia/static/js/787.ab328dec.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b547e88.css",
+    "static/js/main.17fdeed1.js"
+  ]
+}
